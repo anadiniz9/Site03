@@ -10,6 +10,11 @@
     --preto-fundo: #121212;
 
     --texto-branco: #F0F0F0;
+
+    /* Novas variáveis para acessibilidade */
+    --alto-contraste-fundo: #000000;
+    --alto-contraste-texto: #ffffff;
+    --alto-contraste-link: #ffd700;
 }
 
 body {
@@ -20,7 +25,7 @@ body {
 }
 
 header {
-    background-color: #000000cc; /* preto translúcido */
+    background-color: #000000cc;
     border-bottom: 2px solid var(--vermelho-sangue);
 }
 
@@ -40,7 +45,7 @@ section {
 }
 
 .inicio-fundo {
-    background-image: url('img/mundo-invertido-bg.jpg'); /* imagem do Mundo Invertido, escura e misteriosa */
+    background-image: url('img/mundo-invertido-bg.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 80px;
@@ -130,7 +135,7 @@ h2 {
 }
 
 #contato {
-    background-image: url('img/mundo-invertido-noite.jpg'); /* imagem escura e atmosférica */
+    background-image: url('img/mundo-invertido-noite.jpg');
     background-size: cover;
     background-position: center;
     padding: 4rem 0;
@@ -203,22 +208,49 @@ h2 {
     margin-bottom: 5px;
 }
 
+/* ======== Modo Alto Contraste ======== */
+
+.alto-contraste {
+    background-color: var(--alto-contraste-fundo);
+    color: var(--alto-contraste-texto);
+}
+
+.alto-contraste header,
+.alto-contraste footer,
+.alto-contraste .formulario {
+    background-color: var(--alto-contraste-fundo);
+    color: var(--alto-contraste-texto);
+}
+
+.alto-contraste .nav-link {
+    color: var(--alto-contraste-link);
+}
+
+.alto-contraste .botao-inicio,
+.alto-contraste .formulario button,
+.alto-contraste .btn-primary {
+    background-color: var(--alto-contraste-link);
+    color: var(--alto-contraste-fundo);
+}
+
+.alto-contraste #historia {
+    background: none;
+}
+
+.alto-contraste #galeria {
+    background-color: var(--alto-contraste-fundo);
+}
+
+.alto-contraste .fundo-galeria {
+    background: none;
+}
+
 /* ======== Imagens responsivas e ajustadas ======== */
 
 img {
     max-width: 100%;
     height: auto;
     display: block;
-}
-
-.img-inicio {
-    position: absolute;
-    right: 2rem;
-    top: 15rem;
-    max-width: 40rem;
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(0 0 15px var(--vermelho-escuro));
 }
 
 #galeria img {
@@ -236,7 +268,7 @@ img {
     border-radius: 15px;
 }
 
-/* Responsividade: ajusta imagem inicial para telas pequenas */
+/* Responsividade */
 @media (max-width: 768px) {
     .img-inicio {
         position: static;
